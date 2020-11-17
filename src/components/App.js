@@ -1,10 +1,17 @@
 import React, {Component, useState} from "react";
 import "./../styles/App.css";
 
-function App() {
+function App(props) {
+
+function showPara(){
+    document.getElementById('para').innerText= props.children;
+}
+
   return (
     <div id="main">
-      // Do not alter the main div
+                  
+                  <button id="click" onClick={showPara}>click!</button>
+                  <p id="para"></p>
     </div>
   );
 }
