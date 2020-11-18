@@ -4,17 +4,19 @@ import "./../styles/App.css";
 function App() {
 
 
-  const [parag, setPara] = useState('');
+  const [parag, setPara] = useState(false);
   
   const[btn, setBtn] = useState(true)
-
+         function setpage(){
+                 setPara(true);
+                 setBtn(false)
+         }
   return (
     <div id="main">
- {btn ?(<button id="click" onClick={()=>{setPara("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"); setBtn(false)}}>click!!</button>):null}
- {/* <button id="click" onClick={()=>{setPara("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy") setBtn(false)}}>click!!</button> */}
+ {btn ?(<button id="click" onClick={setpage}>clickMe</button>):null}
  
  
- <p id="para">{parag}</p>
+ {parag?(<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>):null}
     
     
     </div>
