@@ -1,17 +1,22 @@
 import React, {Component, useState} from "react";
 import "./../styles/App.css";
-//let flag= false;
-function App(props) {
 
-function showPara(){
-   document.getElementById('para').innerText= props.children;
-    
-}
+function App() {
+
+
+  const [parag, setPara] = useState('');
+  
+  const[btn, setBtn] = useState(true)
 
   return (
     <div id="main">
- <button id="click" onClick={showPara}>click!!</button>
- <p id="para"></p>
+ {btn ?(<button id="click" onClick={()=>{setPara("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"); setBtn(false)}}>click!!</button>):null}
+ {/* <button id="click" onClick={()=>{setPara("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy") setBtn(false)}}>click!!</button> */}
+ 
+ 
+ <p id="para">{parag}</p>
+    
+    
     </div>
   );
 }
